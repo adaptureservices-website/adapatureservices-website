@@ -4,8 +4,440 @@
   <meta charset="UTF-8" />
   <title>Adapture Services Inc. | Junk Removal & Home Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --navy: #0C355A;
+      --white: #ffffff;
+      --text-dark: #222222;
+      --text-muted: #555555;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: var(--navy);
+      color: var(--white);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo-img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .hero {
+      padding: 24px 0 32px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 16px;
+    }
+
+    .hero-highlight {
+      display: inline-block;
+      background-color: var(--navy);
+      color: var(--white);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .hero-cta {
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--navy);
+      color: var(--white);
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--navy);
+      color: var(--navy);
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    section {
+      margin-top: 32px;
+    }
+
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    section p.section-intro {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .card {
+      border: 1px solid #e2e2e2;
+      border-radius: 10px;
+      padding: 14px 14px 16px;
+      background-color: #fafafa;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .card ul {
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .card ul li::before {
+      content: "• ";
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .price-tag {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .inline-list {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .inline-list span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 20px;
+      margin-top: 12px;
+    }
+
+    .contact-box {
+      border: 1px solid #e2e2e2;
+      border-radius: 10px;
+      padding: 14px 14px 16px;
+      background-color: #fafafa;
+      font-size: 14px;
+    }
+
+    .contact-box a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    form label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #d3d3d3;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    form button {
+      border: none;
+      background-color: var(--navy);
+      color: var(--white);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid #e2e2e2;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      nav {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 12px;
+        margin-bottom: 4px;
+      }
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<p>Your full HTML was generated in the chat. Replace this placeholder with your final version.</p>
+  <header>
+    <div class="brand-wrap">
+      <img src="logo.png" alt="Adapture Services Inc. logo" class="brand-logo-img" />
+      <div class="brand-text">ADAPTURE SERVICES INC.</div>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-highlight">Milton • Oakville • Burlington • Mississauga</div>
+      <h1>Professional Junk Removal & Home Services</h1>
+      <p>
+        Adapture Services provides reliable junk removal, interior and exterior
+        light fixture replacement (existing wiring only), dryer vent cleaning,
+        gutter cleaning, and more — proudly serving Milton, Oakville, Burlington,
+        and Mississauga with fast, affordable, and professional service.
+      </p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="tel:9057494443">Call for a free estimate</a>
+        <a class="btn-outline" href="#contact">Get a quote by message</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <p class="section-intro">
+        Clear, straightforward services so you know exactly what we handle.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Standard Junk Removal</h3>
+          <ul>
+            <li>Household junk & furniture</li>
+            <li>Appliances & mattresses</li>
+            <li>Garage / basement / attic cleanouts</li>
+            <li>Yard waste & construction debris</li>
+            <li>Curbside pickup (discounted)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Specialty Removal</h3>
+          <ul>
+            <li>Hot tub removal (surcharge)</li>
+            <li>Shed demolition & removal (surcharge)</li>
+            <li>Pianos, treadmills, heavy items</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Interior & Exterior Light Fixture Replacement</h3>
+          <ul>
+            <li>Standard fixture swaps</li>
+            <li>Chandeliers & heavy fixtures</li>
+            <li>Existing wiring only — no rewiring</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Home Add-Ons</h3>
+          <ul>
+            <li>Dryer vent cleaning</li>
+            <li>Gutter cleaning</li>
+            <li>Small item moving & tidy up</li>
+            <li>Donation drop-off</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2>Simple Pricing</h2>
+      <p class="section-intro">
+        Regular pickup truck pricing — no surprises.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Junk Removal</h3>
+          <p class="price-tag">Minimum Charge: $100</p>
+          <p class="price-tag">Half Truck Load: $200</p>
+          <p class="price-tag">Full Truck Load: $350</p>
+        </div>
+        <div class="card">
+          <h3>Interior & Exterior Fixtures</h3>
+          <p class="price-tag">Standard Fixtures: $40–$60 each</p>
+          <p class="price-tag">Chandeliers / Heavy: $80–$120</p>
+          <p class="inline-list" style="margin-top: 6px;">
+            <span>Existing wiring only — no electrical work.</span>
+          </p>
+        </div>
+        <div class="card">
+          <h3>Home Add-Ons</h3>
+          <p class="price-tag">Dryer Vent (Exterior): $60–$80</p>
+          <p class="price-tag">Dryer Vent (Full): $100–$120</p>
+          <p class="price-tag">Gutter Cleaning (1-Story): $80–$150</p>
+        </div>
+        <div class="card">
+          <h3>Surcharges</h3>
+          <p class="price-tag">Hot Tub Teardown: $250–$400</p>
+          <p class="price-tag">Shed Teardown: $200–$400</p>
+          <p class="price-tag">Heavy Items / Stairs: +$20–$80</p>
+          <p class="price-tag">After 10 PM: +$40</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="section-intro">
+        Call, text, or send a message with photos.
+      </p>
+
+      <div class="contact-wrap">
+        <div class="contact-box">
+          <p><strong>Phone:</strong>
+            <a href="tel:9057494443">905-749-4443</a>
+          </p>
+          <p><strong>Email:</strong>
+            <a href="mailto:adaptureservices@gmail.com">adaptureservices@gmail.com</a>
+          </p>
+          <p style="margin-top: 8px;">
+            Serving Milton, Oakville, Burlington, and Mississauga.<br />
+            Open 7 days a week.
+          </p>
+          <p style="margin-top: 8px; font-size: 13px;">
+            Text photos for a fast estimate.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <form>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your name" />
+
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" placeholder="Your phone number" />
+
+            <label for="message">What do you need done?</label>
+            <textarea id="message" name="message" placeholder="Tell us about your job."></textarea>
+
+            <button type="submit">Send (demo only)</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Adapture Services Inc. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
